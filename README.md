@@ -1,3 +1,179 @@
+
+# Ejecutar proyecto 
+
+
+Resumen: Cómo Clonar y Ejecutar boletoslaravel
+Sigue estos pasos para tener el proyecto corriendo en tu PC:
+
+1. Requisitos Previos (Instalados en tu PC):
+
+XAMPP (con Apache y MySQL iniciados).
+Composer.
+Git.
+Editor de código (VS Code recomendado).
+Postman (para probar la API).
+
+2. Pasos a Seguir:
+
+Clonar el Proyecto:
+Abre una terminal (CMD, PowerShell, Git Bash).
+Navega a la carpeta donde quieres guardar el proyecto (ej: C:\MisProyectos).
+Ejecuta:
+bash
+
+
+
+
+git clone https://github.com/Alberth812/boletoslaravel.git
+cd boletoslaravel
+Instalar Dependencias:
+Dentro de la carpeta boletoslaravel, ejecuta:
+bash
+
+
+
+composer install
+Configurar el Entorno (.env):
+Copia el archivo .env.example y créale una copia llamada .env:
+bash
+
+
+
+copy .env.example .env
+Genera la clave de la aplicación:
+bash
+
+
+
+php artisan key:generate
+Edita el archivo .env y asegúrate de que la configuración de la base de datos sea correcta (normalmente no necesitas cambiar nada si usas XAMPP por defecto):
+
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=boletoslaravel
+DB_USERNAME=root
+DB_PASSWORD=
+Crear la Base de Datos:
+Abre phpMyAdmin (http://localhost/phpmyadmin ).
+Crea una nueva base de datos llamada boletoslaravel.
+Crear Tablas y Cargar Datos:
+En la terminal, dentro de la carpeta del proyecto, ejecuta:
+bash
+
+
+
+php artisan migrate --seed
+(Esto crea todas las tablas y llena la base de datos con información de ejemplo).
+Levantar el Servidor:
+En la terminal, ejecuta:
+bash
+
+
+
+php artisan serve
+Verás un mensaje como: Starting Laravel development server: http://127.0.0.1:8000
+Probar la API:
+Abre tu navegador o Postman.
+Ve a: http://127.0.0.1:8000/api/users
+Deberías ver una lista de usuarios en formato JSON.
+
+# Listado de rutas:
+Para cada recurso, las rutas siguen este patrón:
+
+Listar todos: GET /api/{recurso}
+Crear uno: POST /api/{recurso}
+Ver uno: GET /api/{recurso}/{id}
+Actualizar uno: PUT /api/{recurso}/{id}
+Eliminar uno: DELETE /api/{recurso}/{id}
+Entonces, tus rutas completas son:
+
+1. Usuarios (users)
+GET http://127.0.0.1:8000/api/users (Listar todos)
+POST http://127.0.0.1:8000/api/users (Crear uno)
+GET http://127.0.0.1:8000/api/users/{id} (Ver uno)
+PUT http://127.0.0.1:8000/api/users/{id} (Actualizar uno)
+DELETE http://127.0.0.1:8000/api/users/{id} (Eliminar uno)
+
+2. Ubicaciones (ubicaciones)
+GET http://127.0.0.1:8000/api/ubicaciones
+POST http://127.0.0.1:8000/api/ubicaciones
+GET http://127.0.0.1:8000/api/ubicaciones/{id}
+PUT http://127.0.0.1:8000/api/ubicaciones/{id}
+DELETE http://127.0.0.1:8000/api/ubicaciones/{id}
+
+3. Eventos (eventos)
+GET http://127.0.0.1:8000/api/eventos
+POST http://127.0.0.1:8000/api/eventos
+GET http://127.0.0.1:8000/api/eventos/{id}
+PUT http://127.0.0.1:8000/api/eventos/{id}
+DELETE http://127.0.0.1:8000/api/eventos/{id}
+
+4. Artistas (artistas)
+GET http://127.0.0.1:8000/api/artistas
+POST http://127.0.0.1:8000/api/artistas
+GET http://127.0.0.1:8000/api/artistas/{id}
+PUT http://127.0.0.1:8000/api/artistas/{id}
+DELETE http://127.0.0.1:8000/api/artistas/{id}
+
+5. Tipos de Boletos (tipos-de-boletos)
+GET http://127.0.0.1:8000/api/tipos-de-boletos
+POST http://127.0.0.1:8000/api/tipos-de-boletos
+GET http://127.0.0.1:8000/api/tipos-de-boletos/{id}
+PUT http://127.0.0.1:8000/api/tipos-de-boletos/{id}
+DELETE http://127.0.0.1:8000/api/tipos-de-boletos/{id}
+
+6. Paquetes de Boletos (paquetes-boletos)
+GET http://127.0.0.1:8000/api/paquetes-boletos
+POST http://127.0.0.1:8000/api/paquetes-boletos
+GET http://127.0.0.1:8000/api/paquetes-boletos/{id}
+PUT http://127.0.0.1:8000/api/paquetes-boletos/{id}
+DELETE http://127.0.0.1:8000/api/paquetes-boletos/{id}
+
+7. Eventos-Artistas (eventos-artistas)
+GET http://127.0.0.1:8000/api/eventos-artistas
+POST http://127.0.0.1:8000/api/eventos-artistas
+GET http://127.0.0.1:8000/api/eventos-artistas/{id}
+DELETE http://127.0.0.1:8000/api/eventos-artistas/{id}
+(Nota: Para tablas pivote, generalmente no se usa PUT. Se elimina la relación y se crea una nueva).
+Descuentos (descuentos)
+GET http://127.0.0.1:8000/api/descuentos
+POST http://127.0.0.1:8000/api/descuentos
+GET http://127.0.0.1:8000/api/descuentos/{id}
+PUT http://127.0.0.1:8000/api/descuentos/{id}
+DELETE http://127.0.0.1:8000/api/descuentos/{id}
+
+8. Compras (compras)
+GET http://127.0.0.1:8000/api/compras
+POST http://127.0.0.1:8000/api/compras
+GET http://127.0.0.1:8000/api/compras/{id}
+PUT http://127.0.0.1:8000/api/compras/{id}
+DELETE http://127.0.0.1:8000/api/compras/{id}
+
+9. Boletos (boletos)
+GET http://127.0.0.1:8000/api/boletos
+POST http://127.0.0.1:8000/api/boletos
+GET http://127.0.0.1:8000/api/boletos/{id}
+PUT http://127.0.0.1:8000/api/boletos/{id}
+DELETE http://127.0.0.1:8000/api/boletos/{id}
+
+10. Compra-Descuentos (compra-descuentos)
+GET http://127.0.0.1:8000/api/compra-descuentos
+POST http://127.0.0.1:8000/api/compra-descuentos
+GET http://127.0.0.1:8000/api/compra-descuentos/{id}
+DELETE http://127.0.0.1:8000/api/compra-descuentos/{id}
+(Nota: Para tablas pivote, generalmente no se usa PUT. Se elimina la relación y se crea una nueva).
+
+
+
+
+
+
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
