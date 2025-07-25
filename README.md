@@ -81,6 +81,7 @@ Ve a:
 
 Deberías ver una lista de usuarios en formato JSON.
 
+
 # Listado de rutas:
 **Para cada recurso, las rutas siguen este patrón:**
 
@@ -94,91 +95,90 @@ Deberías ver una lista de usuarios en formato JSON.
 
 **Usuarios (users)**
 
->  GET http://127.0.0.1:8000/api/users (Listar todos) POST 
-> http://127.0.0.1:8000/api/users (Crear uno) GET 
-> http://127.0.0.1:8000/api/users/{id} (Ver uno) PUT 
-> http://127.0.0.1:8000/api/users/{id} (Actualizar uno) DELETE 
-> http://127.0.0.1:8000/api/users/{id} (Eliminar uno)
+> GET http://127.0.0.1:8000/api/users (Listar todos) 
+> POST http://127.0.0.1:8000/api/users (Crear uno) 
+> GET http://127.0.0.1:8000/api/users/{id} (Ver uno) 
+> PUT http://127.0.0.1:8000/api/users/{id} (Actualizar uno) 
+> DELETE http://127.0.0.1:8000/api/users/{id} (Eliminar uno)
 
  **Ubicaciones (ubicaciones)**
 
-> GET http://127.0.0.1:8000/api/ubicaciones POST
-> http://127.0.0.1:8000/api/ubicaciones GET
-> http://127.0.0.1:8000/api/ubicaciones/{id} PUT
-> http://127.0.0.1:8000/api/ubicaciones/{id} DELETE
-> http://127.0.0.1:8000/api/ubicaciones/{id}
+> GET http://127.0.0.1:8000/api/ubicaciones 
+> POSThttp://127.0.0.1:8000/api/ubicaciones 
+> GET http://127.0.0.1:8000/api/ubicaciones/{id} 
+> PUT http://127.0.0.1:8000/api/ubicaciones/{id} 
+> DELETE http://127.0.0.1:8000/api/ubicaciones/{id}
 
  **Eventos (eventos)**
 
-> GET http://127.0.0.1:8000/api/eventos POST
-> http://127.0.0.1:8000/api/eventos GET
-> http://127.0.0.1:8000/api/eventos/{id} PUT
-> http://127.0.0.1:8000/api/eventos/{id} DELETE
-> http://127.0.0.1:8000/api/eventos/{id}
+> GET http://127.0.0.1:8000/api/eventos 
+> POST http://127.0.0.1:8000/api/eventos 
+> GET http://127.0.0.1:8000/api/eventos/{id} 
+> PUT http://127.0.0.1:8000/api/eventos/{id} 
+> DELETE http://127.0.0.1:8000/api/eventos/{id}
 
  **Artistas (artistas)**
 
-> GET http://127.0.0.1:8000/api/artistas POST
-> http://127.0.0.1:8000/api/artistas GET
-> http://127.0.0.1:8000/api/artistas/{id} PUT
-> http://127.0.0.1:8000/api/artistas/{id} DELETE
-> http://127.0.0.1:8000/api/artistas/{id}
+> GET http://127.0.0.1:8000/api/artistas 
+> POST http://127.0.0.1:8000/api/artistas 
+> GET http://127.0.0.1:8000/api/artistas/{id} 
+> PUT http://127.0.0.1:8000/api/artistas/{id} 
+> DELETE http://127.0.0.1:8000/api/artistas/{id}
 
 **Tipos de Boletos (tipos-de-boletos)**
 
-> GET http://127.0.0.1:8000/api/tipos-de-boletos POST
-> http://127.0.0.1:8000/api/tipos-de-boletos GET
-> http://127.0.0.1:8000/api/tipos-de-boletos/{id} PUT
-> http://127.0.0.1:8000/api/tipos-de-boletos/{id} DELETE
-> http://127.0.0.1:8000/api/tipos-de-boletos/{id}
+> GET http://127.0.0.1:8000/api/tipos-de-boletos 
+> POST http://127.0.0.1:8000/api/tipos-de-boletos 
+> GET http://127.0.0.1:8000/api/tipos-de-boletos/{id} 
+> PUT http://127.0.0.1:8000/api/tipos-de-boletos/{id} 
+> DELETE http://127.0.0.1:8000/api/tipos-de-boletos/{id}
 
 **Paquetes de Boletos (paquetes-boletos)**
 
-> GET http://127.0.0.1:8000/api/paquetes-boletos POST
-> http://127.0.0.1:8000/api/paquetes-boletos GET
-> http://127.0.0.1:8000/api/paquetes-boletos/{id} PUT
-> http://127.0.0.1:8000/api/paquetes-boletos/{id} DELETE
-> http://127.0.0.1:8000/api/paquetes-boletos/{id}
+> GET http://127.0.0.1:8000/api/paquetes-boletos 
+> POST http://127.0.0.1:8000/api/paquetes-boletos 
+> GET http://127.0.0.1:8000/api/paquetes-boletos/{id} 
+> PUT http://127.0.0.1:8000/api/paquetes-boletos/{id} 
+> DELETE http://127.0.0.1:8000/api/paquetes-boletos/{id}
 
 **Eventos-Artistas (eventos-artistas)**
 
-> GET http://127.0.0.1:8000/api/eventos-artistas POST
-> http://127.0.0.1:8000/api/eventos-artistas GET
-> http://127.0.0.1:8000/api/eventos-artistas/{id} DELETE
-> http://127.0.0.1:8000/api/eventos-artistas/{id} (Nota: Para tablas
-> pivote, generalmente no se usa PUT. Se elimina la relación y se crea
-> una nueva).
+> GET http://127.0.0.1:8000/api/eventos-artistas 
+> POST http://127.0.0.1:8000/api/eventos-artistas 
+> GET http://127.0.0.1:8000/api/eventos-artistas/{id} 
+> DELETE http://127.0.0.1:8000/api/eventos-artistas/{id} 
+> (Nota: Para tablas pivote, generalmente no se usa PUT. Se elimina la relación y se crea una nueva).
 
 **Descuentos (descuentos)**
 
-> GET http://127.0.0.1:8000/api/descuentos POST
-> http://127.0.0.1:8000/api/descuentos GET
-> http://127.0.0.1:8000/api/descuentos/{id} PUT
-> http://127.0.0.1:8000/api/descuentos/{id} DELETE
-> http://127.0.0.1:8000/api/descuentos/{id}
+> GET http://127.0.0.1:8000/api/descuentos 
+> POST http://127.0.0.1:8000/api/descuentos 
+> GET http://127.0.0.1:8000/api/descuentos/{id} 
+> PUT http://127.0.0.1:8000/api/descuentos/{id} 
+> DELETE http://127.0.0.1:8000/api/descuentos/{id}
 
  **Compras (compras)**
 
-> GET http://127.0.0.1:8000/api/compras POST
-> http://127.0.0.1:8000/api/compras GET
-> http://127.0.0.1:8000/api/compras/{id} PUT
-> http://127.0.0.1:8000/api/compras/{id} DELETE
-> http://127.0.0.1:8000/api/compras/{id}
+> GET http://127.0.0.1:8000/api/compras 
+> POST http://127.0.0.1:8000/api/compras 
+> GET http://127.0.0.1:8000/api/compras/{id} 
+> PUT http://127.0.0.1:8000/api/compras/{id} 
+> DELETE http://127.0.0.1:8000/api/compras/{id}
 
 **Boletos (boletos)**
 
-> GET http://127.0.0.1:8000/api/boletos POST
-> http://127.0.0.1:8000/api/boletos GET
-> http://127.0.0.1:8000/api/boletos/{id} PUT
-> http://127.0.0.1:8000/api/boletos/{id} DELETE
-> http://127.0.0.1:8000/api/boletos/{id}
+> GET http://127.0.0.1:8000/api/boletos 
+> POST http://127.0.0.1:8000/api/boletos 
+> GET http://127.0.0.1:8000/api/boletos/{id} 
+> PUT http://127.0.0.1:8000/api/boletos/{id} 
+> DELETE http://127.0.0.1:8000/api/boletos/{id}
 
 **Compra-Descuentos (compra-descuentos)**
 
-> GET http://127.0.0.1:8000/api/compra-descuentos POST    
-> http://127.0.0.1:8000/api/compra-descuentos GET    
-> http://127.0.0.1:8000/api/compra-descuentos/{id} DELETE    
-> http://127.0.0.1:8000/api/compra-descuentos/{id} 
+> GET http://127.0.0.1:8000/api/compra-descuentos 
+> POST http://127.0.0.1:8000/api/compra-descuentos 
+> GET http://127.0.0.1:8000/api/compra-descuentos/{id} 
+> DELETE http://127.0.0.1:8000/api/compra-descuentos/{id} 
 > (Nota: Para tablas pivote, generalmente no se usa PUT. Se elimina la relación y se  crea una nueva).
 
 
