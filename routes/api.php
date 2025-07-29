@@ -1,7 +1,18 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API;
+// Importamos todos los controladores API
+use App\Http\Controllers\API\UserController;
+use App\Http\Controllers\API\UbicacionController;
+use App\Http\Controllers\API\EventoController;
+use App\Http\Controllers\API\ArtistaController;
+use App\Http\Controllers\API\TipoDeBoletoController;
+use App\Http\Controllers\API\PaqueteBoletoController;
+use App\Http\Controllers\API\EventoArtistaController;
+use App\Http\Controllers\API\DescuentoController;
+use App\Http\Controllers\API\CompraController;
+use App\Http\Controllers\API\BoletoController;
+use App\Http\Controllers\API\CompraDescuentoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -10,44 +21,50 @@ use App\Http\Controllers\API;
 |
 | Here is where you can register API routes for your application. These
 | routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
+| be assigned to the "api" middleware group. This middleware group
+| does NOT include session state or CSRF protection, which is ideal
+| for building stateless RESTful APIs.
+|
+| The "api" prefix is automatically applied to routes in this file.
 |
 */
 
-// Agrupamos todas las rutas bajo el prefijo 'api' y el middleware 'api'
-// (El prefijo 'api' ya se aplica por defecto al cargar este archivo)
+// --- RUTAS DE LA API ---
+// Laravel automatically applies the 'api' middleware group to routes here.
+// This group (defined in App\Http\Kernel) is stateless and perfect for APIs.
 
-Route::middleware('api')->group(function () {
-    // Rutas para Usuarios
-    Route::apiResource('users', API\UserController::class);
+// Rutas para Usuarios
+Route::apiResource('users', UserController::class);
 
-    // Rutas para Ubicaciones
-    Route::apiResource('ubicaciones', API\UbicacionController::class);
+// Rutas para Ubicaciones
+Route::apiResource('ubicaciones', UbicacionController::class);
 
-    // Rutas para Eventos
-    Route::apiResource('eventos', API\EventoController::class);
+// Rutas para Eventos
+Route::apiResource('eventos', EventoController::class);
 
-    // Rutas para Artistas
-    Route::apiResource('artistas', API\ArtistaController::class);
+// Rutas para Artistas
+Route::apiResource('artistas', ArtistaController::class);
 
-    // Rutas para Tipos de Boletos
-    Route::apiResource('tipos-de-boletos', API\TipoDeBoletoController::class);
+// Rutas para Tipos de Boletos
+Route::apiResource('tipos-de-boletos', TipoDeBoletoController::class);
 
-    // Rutas para Paquetes de Boletos
-    Route::apiResource('paquetes-boletos', API\PaqueteBoletoController::class);
+// Rutas para Paquetes de Boletos
+Route::apiResource('paquetes-boletos', PaqueteBoletoController::class);
 
-    // Rutas para la relación Evento-Artista (Pivote)
-    Route::apiResource('eventos-artistas', API\EventoArtistaController::class);
+// Rutas para la relación Evento-Artista (Pivote)
+// Nota: Para relaciones pivote, generalmente no se usa 'update'
+Route::apiResource('eventos-artistas', EventoArtistaController::class)->except(['update']);
 
-    // Rutas para Descuentos
-    Route::apiResource('descuentos', API\DescuentoController::class);
+// Rutas para Descuentos
+Route::apiResource('descuentos', DescuentoController::class);
 
-    // Rutas para Compras
-    Route::apiResource('compras', API\CompraController::class);
+// Rutas para Compras
+Route::apiResource('compras', CompraController::class);
 
-    // Rutas para Boletos
-    Route::apiResource('boletos', API\BoletoController::class);
+// Rutas para Boletos
+Route::apiResource('boletos', BoletoController::class);
 
-    // Rutas para la relación Compra-Descuento (Pivote)
-    Route::apiResource('compra-descuentos', API\CompraDescuentoController::class);
-});
+// Rutas para la relación Compra-Descuento (Pivote)
+
+Route::apiResource('compra-descuentos', CompraDescuentoController::class)->except(['update']);
+
